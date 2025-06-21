@@ -1,4 +1,4 @@
-package br.com.healthmonitor.client.screen
+package br.com.healthmonitor.client.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,14 +15,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun AddMeasurementScreen(onBackClick: () -> Unit) {
+fun DashboardScreen(onAddMeasurement: () -> Unit, onViewReport: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-        Text("Adicionar Medições", fontSize = 24.sp, fontWeight = FontWeight.Bold)
+        Text("CardiON", fontSize = 28.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(16.dp))
-        Button(onClick = { /* ação pressão arterial */ }, modifier = Modifier.fillMaxWidth()) { Text("Adicionar Pressão Arterial") }
+        Button(onClick = onAddMeasurement, modifier = Modifier.fillMaxWidth()) { Text("Adicionar Medição") }
         Spacer(Modifier.height(8.dp))
-        Button(onClick = { /* ação glicemia */ }, modifier = Modifier.fillMaxWidth()) { Text("Adicionar Glicemia") }
-        Spacer(Modifier.height(8.dp))
-        Button(onClick = onBackClick, modifier = Modifier.fillMaxWidth()) { Text("Voltar") }
+        Button(onClick = onViewReport, modifier = Modifier.fillMaxWidth()) { Text("Relatório Semanal") }
     }
 }
