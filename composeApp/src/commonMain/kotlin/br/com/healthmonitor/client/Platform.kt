@@ -1,6 +1,6 @@
 package br.com.healthmonitor.client
 
-interface Platform {
+interface  Platform {
     val name: String
 }
 
